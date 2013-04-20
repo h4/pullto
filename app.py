@@ -1,11 +1,15 @@
 # coding = utf-8
 
+import os
+import sys
 import json
 import subprocess
-import os
 from hashlib import sha256
 from bottle import request, abort, Bottle
-from settings import *
+
+settings_module = os.environ.get('PULLTO_SETTINGS_MODULE')
+
+settings = __import__(settings_module)
 
 app = Bottle()
 
@@ -14,12 +18,12 @@ def log(message):
     print message
 
 
-def check_auth(auth_header, user=GITHUB_USER, repo=GITHUB_REPO, token=TRAVIS_TOKEN):
+def check_auth(auth_header, user=settings.GITHUB_USER, repo=settings.GITHUB_REPO, token=settings.TRAVIS_TOKEN):
     checksum = sha256(user + '/' + repo + token).hexdigest()
     return checksum == auth_header
 
 
-def verify_status(payload, repository=REPOSITORY_URL):
+def verify_status(payload, repository=settings.REPOSITORY_URL):
     return payload['repository']['url'] == repository and payload['result'] == 0
 
 
@@ -42,11 +46,11 @@ def validate_working_copy(path, repository):
 
 
 def deploy(branch_name):
-    branch_dir = BRANCH_DIRS[branch_name] if branch_name in BRANCH_DIRS else STAGING_DIR
+    branch_dir = settings.BRANCH_DIRS[branch_name] if branch_name in settings.BRANCH_DIRS else settings.STAGING_DIR
 
-    validate_working_copy(branch_dir, REPOSITORY_URL)
+    validate_working_copy(branch_dir, settings.REPOSITORY_URL)
 
-    run_shell_commands(BEFORE_DEPLOY)
+    run_shell_commands(settings.BEFORE_DEPLOY)
 
     try:
         subprocess.check_call(['git', 'fetch'])
@@ -55,7 +59,7 @@ def deploy(branch_name):
     except subprocess.CalledProcessError, e:
         log(e)
 
-    run_shell_commands(AFTER_DEPLOY)
+    run_shell_commands(settings.AFTER_DEPLOY)
 
 
 @app.route('/', method='GET')
@@ -83,11 +87,12 @@ def index():
 
 
 if __name__ == '__main__':
-    if DEBUG:
+    os.environ.setdefault("PULLTO_SETTINGS_MODULE", "settings")
+    if settings.DEBUG:
         app.run(host='0.0.0.0', port=8080, reloader=True)
     else:
-        if LISTEN_TO == 'socket':
-            app.run(server='flup', bindAddress=SOCKET)
+        if settings.LISTEN_TO == 'socket':
+            app.run(server='flup', bindAddress=settings.SOCKET)
         else:
             # I'm not sure, that it's works
-            app.run(server='flup', bindAddress='{0}:{1}'.format(HTTP_HOST, HTTP_PORT))
+            app.run(server='flup', bindAddress='{0}:{1}'.format(settings.HTTP_HOST, settings.HTTP_PORT))

@@ -10,11 +10,11 @@ SOCKET = '/tmp/pullto.sock'
 
 # HTTP_PORT = '8080'
 
-TRAVIS_TOKEN = 'yourTravisToken'
+TRAVIS_TOKEN = 'token'
 
-GITHUB_USER = 'h4'
+GITHUB_USER = 'user'
 
-GITHUB_REPO = 'pullto'
+GITHUB_REPO = 'repo'
 
 REPOSITORY_URL = "https://github.com/h4/pullto"
 
