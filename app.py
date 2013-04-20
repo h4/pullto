@@ -24,7 +24,6 @@ def verify_status(payload):
 
 
 def run_shell_commands(stack):
-    pass
     for command in stack:
         try:
             subprocess.check_call(command)
@@ -82,4 +81,13 @@ def index():
         log(e)
         abort(500, 'Deploy error')
 
-app.run(host='0.0.0.0', port=8080, reloader=DEBUG)
+
+if __name__ == '__main__':
+    if DEBUG:
+        app.run(host='0.0.0.0', port=8080, reloader=True)
+    else:
+        if LISTEN_TO == 'socket':
+            app.run(server='flup', bindAddress=SOCKET)
+        else:
+            # I'm not sure, that it's works
+            app.run(server='flup', bindAddress='{0}:{1}'.format(HTTP_HOST, HTTP_PORT))

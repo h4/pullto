@@ -2,6 +2,14 @@
 
 DEBUG = True
 
+LISTEN_TO = 'socket' # 'socket or http'
+
+SOCKET = '/tmp/pullto.sock'
+
+# HTTP_HOST = '127.0.0.1'
+
+# HTTP_PORT = '8080'
+
 TRAVIS_TOKEN = 'yourTravisToken'
 
 GITHUB_USER = 'h4'
