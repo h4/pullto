@@ -50,6 +50,7 @@ def deploy(branch_name):
     try:
         subprocess.check_call(['git', 'fetch'])
         subprocess.check_call(['git', 'checkout', branch_name])
+        subprocess.check_call(['git', 'pull'])
     except subprocess.CalledProcessError, e:
         log(e)
 
