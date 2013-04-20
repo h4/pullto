@@ -4,8 +4,10 @@ import json
 import subprocess
 import os
 from hashlib import sha256
-from bottle import route, run, request, abort
+from bottle import request, abort, Bottle
 from settings import *
+
+app = Bottle()
 
 
 def log(message):
@@ -57,12 +59,12 @@ def deploy(branch_name):
     run_shell_commands(AFTER_DEPLOY)
 
 
-@route('/', method='GET')
+@app.route('/', method='GET')
 def reject():
     abort(400, 'Bad request')
 
 
-@route('/', method='POST')
+@app.route('/', method='POST')
 def index():
     if not check_auth(request.get_header('Authorization')):
         abort(401, 'Unauthorized')
@@ -80,4 +82,4 @@ def index():
         log(e)
         abort(500, 'Deploy error')
 
-run(host='0.0.0.0', port=8080, reloader=DEBUG)
+app.run(host='0.0.0.0', port=8080, reloader=DEBUG)
