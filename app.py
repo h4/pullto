@@ -14,13 +14,13 @@ def log(message):
     print message
 
 
-def check_auth(auth_header):
-    checksum = sha256(GITHUB_USER + '/' + GITHUB_REPO + TRAVIS_TOKEN).hexdigest()
+def check_auth(auth_header, user=GITHUB_USER, repo=GITHUB_REPO, token=TRAVIS_TOKEN):
+    checksum = sha256(user + '/' + repo + token).hexdigest()
     return checksum == auth_header
 
 
-def verify_status(payload):
-    return payload['repository']['url'] == REPOSITORY_URL and payload['result'] == 0
+def verify_status(payload, repository=REPOSITORY_URL):
+    return payload['repository']['url'] == repository and payload['result'] == 0
 
 
 def run_shell_commands(stack):
