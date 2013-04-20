@@ -2,6 +2,12 @@
 
 DEBUG = True
 
+TRAVIS_TOKEN = 'yourTravisToken'
+
+GITHUB_USER = 'h4'
+
+GITHUB_REPO = 'pullto'
+
 REPOSITORY_URL = "https://github.com/h4/pullto"
 
 BRANCHES_DIRS = {
