@@ -5,7 +5,7 @@ import subprocess
 from hashlib import sha256
 from bottle import request, abort, Bottle
 
-settings_module = os.environ.get('PULLTO_SETTINGS_MODULE')
+settings_module = os.environ.get('PULLTO_SETTINGS_MODULE') if os.environ.get('PULLTO_SETTINGS_MODULE') is not None else 'settings'
 
 settings = __import__(settings_module)
 
