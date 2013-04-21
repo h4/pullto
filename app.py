@@ -1,7 +1,5 @@
 # coding = utf-8
-
 import os
-import sys
 import json
 import subprocess
 from hashlib import sha256

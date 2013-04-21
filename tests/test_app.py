@@ -1,11 +1,9 @@
 # coding = utf-8
-
 import os
 import json
 import unittest
 from webtest import TestApp
 import app as application
-
 
 current_dir = os.path.dirname(__file__)
 
@@ -36,7 +34,6 @@ class Test(unittest.TestCase):
     def setUp(self):
         payload_file = os.path.join(current_dir, 'travis-payload.json')
         self.payload = json.load(open(payload_file))
-
 
     def test_verify_status(self):
         self.assertTrue(application.verify_status(self.payload, repository='http: //github.com/svenfuchs/minimal'))
