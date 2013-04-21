@@ -36,4 +36,4 @@ class Test(unittest.TestCase):
         self.payload = json.load(open(payload_file))
 
     def test_verify_status(self):
-        self.assertTrue(application.verify_status(self.payload, repository='http: //github.com/svenfuchs/minimal'))
+        self.assertTrue(application.verify_status(self.payload))
