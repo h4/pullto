@@ -2,10 +2,38 @@ language: python
 python:
   - "2.7"
 # specify environment variables
-env: PULLTO_SETTINGS_MODULE=settings_sample
+env:
+ global:
+    - secure: "VjfGNfdd4ISEt613HB36OWXrFl8MKbwUc+KpRIiQkAlkVcOPbuhcha92hD5sLf5fOZGMykU/Q1ZAfMVjIkD3mNo5lZQJlmNoWaEHJF4ySzPwjvSaGwlK0OSpdYRHAUd67+RLKkcoCuhEoLSfRUwJRV0wM+3M8vRZi8iswIJ1NMw="
+    - secure: "Bjft26tBQnnQl+02b9prTPPCiEF/mZY34lrM+5YU6UMRQ8FsJZcYnZfFwF2myg+qqF5zMgSgOL1aHwTnv4cSXSo5vQdvWF4XBtV1vRfU2ph/P/rgHUcdzM2rGZr6NhRam5M2Ojg/XqXKJUnU/MsFGG2+RFwJIHSdl/HX0OzKU9g="
+    - secure: "hLyxQ3soPF0g8lqpVlSCFjCirvogC/RPpq1+A9R+02TAEcRX+PSHFrAI9Fwgul1rBC4pC5OeSYKddF12Es4LKcUyNX8Sv3DzE3wZRAhTqOJNn4ZfAWNWykSxJqqB8OLBBDhaq307WZb1CKzKzTNp4jxAqQVcxwOVFP/9XBOdnuc="
+    - secure: "IfUTj9pnUMy84axPBr3aY4Xums5w0MUcScGu9JtexMyF+F0LSyEiRGWXKmpve2Ad8rwubB2V3lhR/7cCRvuDuyiGYIyhRWD5PJD/iH5tTg8LRhnqU8vnOGeB6OhrcGdBdXcLy4KLLc2ume+G5iatzE6IabMTJU/qkTGPJyna5zw="
+    - secure: "Kyo1GWpx61aXbsg9x/neJnrQ/yba8uDcwlVs9F4jRRBtH9+aLhlZmxIscxcvsKHyMGV4M8vpgFUwHe1zB8trvt8v8TrFKd4R+5h4mSaM/VLNQV1M0tMMvJ4GdtYDGQ0ow2JaG3MNH/V7rlKeO0C2d4dXAD2hYh/Uew/YOYFEnDk="
+    - secure: "Po0OIAw/U/+rvydwt/qFb3yrNfaL0kgXwzWSzv6JGRoYqbTdlAiamOZKxxM8HwB6KpmIeQ50fskPFMXLPae+UTNmkSyPv1fngVWKdsre9qFW50Oj+UvjET9ogQfn5/k00X4OEN3/53IxsJQn9ZL1b/o1ernL1JS5mAp7mXiN1dM="
+    - secure: "D0g5w/qkB1Pp4Q9Qpa37ph7E8ABpIhJOyH5c2DWYbpvsKDvz/XWZn4bjMGBO8OnojpY9Oa+F5e4iUKJ2Ad79MmBBM9GTmnARzkALYcZteK3LxclWe8dcfjFN QckbqzXQxXZjwT5HVKowr0sW+vQr6nfQX23/AnDy77cFUEZQOZ8="
+    - secure: "Rk3a9R0P/lRylHPM73TV29yVLpbX0IT8gcAjQK7C1XaAg9E/1ZuMxs9gTXkbEPOIxjcvnJPwzD86v8U02waRoNnaec6BJqdlyGN1alyJtYBkhlP3prXiZnPZXk+yHhx+maWN1g99zYN2wH/+UlHylaP7RqFVLlQzbeHF+j8HihQ="
+    - secure: "e3xUwWOU3Y9FCQst1UFjB+kcDFkbSCObOYlebAcxt5QE5fQvWXhe3NkS8xuWUD4d9D3zCtdYpl+Nm19zQWj2ZNsTJxp/zOLanfFFteUkno2N5itkmvtsvF8PJJfTZcGAcd2Qvvf23Mb+xaSxJtHoQ5I8PmITUBc+JBTMaS6ErQY="
+    - secure: "LVWPC/R9vC0Gcp+0IAHd8JFtZfwxbngHCaI3tG9JTrv494n2H6lp9MmBSC4jkQJnjcpFBaRCU3c0ZNyJvJoTy0n75Yh5z2vbiAwIVlHumoCjA9ogf1hDmqxgYJsbeZt/djgYf0rKZSmPz2VWx7wmPQKUqcCNjzeng9kdW1LlGI8="
+    - secure: "KBVvU2JlLBKYO8SHgHcS+/QVQ+UuO9gvxqiql6XAn7YrxQopzFSaUPLoFcL1WHuIQLQptAlsoiZWbgGYaW0ZCSTxgU7U658ZAzxfuGYbmgpClEXyz9tzVKRQgRnqrSRjEsWJsViuA8IYWZmxWV//9fqE1pHdx2/l5E84klht+WU="
+    - secure: "job3H5sG/v3900VMLGfyTL1lbtSp3vdvv7SOzvsFH0GF7pJGatIAxn1e9+es8x9i/n5keBatZ1lRq7Mhek68TMLNla4VNAzh/uc0Hamice5aZwM9bkxAvqx/NT37TbitMJc27kE8YBYld7CWwbjS3G14sOdCX1bYMSAyx9sf41Q="
+    - secure: "ppfg4EvGiD6iPpGiHVZ8GNuEc+v6DR3wUuf2IvdXe+S6oALBIF9YqkGBcxr6mF+oCJffMXnkt9I77cBROGVx3Ol1NpDPMYVNqAejJxowBPW8N7ezDDsHHnahq6bTsLYlgNfxUxUATaI8ZeDIJjBIeYKlweiV6E3Q3Tk4W08TH2c="
+    - secure: "hw/M42iaUdN2YhdsjqfFzFfusmLfdahFoXoHqHXWidNA/LcQJxzOoOK52MiilelIv9aM1ZQebGW/zl6Us6mUcsYu7xvU55CcqWXyCOGIzpm2t8sC69hLAVIQFI/wGUXAZ+1ZJhUqi5CWGQgpZGEnXRG5d1Ra02gC0ghRPjEYWRs="
+    - secure: "hwtmMszjVTyiP8ujT0Lxg84tpkqsFm/an0pqGPk1sVYJ4CS6sPbZ9Wcpm7m2YGP16WGlUHVpTYV3hrIJqHxCA1IwVeQAK/qAbFvA2lOHOBuV9yFgS6isT/KA6Mc3bT5eTszwpGEEMqEaQ28/mSo6AyzLgvTvjaGMKWqFPauOwq4="
+    - secure: "jyor0dVHLfOg+1sCdWcecw0Ji7oO4jfr35KOcnHp0tj08d48ST7f79roLcPiCj5DuR6h1ZSlMv1yZ6Itg+/cWFbDphpH1xr6o1X29YD7HCW2ogl8Xlk0gsIJyzAC2/pDHCGjoZtFtnZCzrUHDcx7PkQzVJbH9FYLBCI4/rizdhU="
+    - secure: "ObNZU8ApAzI2H8/1NdSZ1JRyRmohPTgHM9nAKtjSskPFebEeYh3wZmvDBIZKN1kR4Q0lPrV8UiKOE8OQ71HCq8jBj4g7GBEv8bDqpXhKj58YP9Nap0GxDTCLWOVH5ylxJBaGz6QRxlaPrIDB5BZBn2SlQs56YYLRQP3AfVC3IiE="
+    - secure: "EdXHNtUZzkQBAir3bAYKmpc+ffuFo8b76I8awxCk3ht1Y+coRZsFx6RzPWuzvhhASUYUwbLr3/joV0G7M6A7aWnnb8gh8nYuFvHOngKK2IcBHvE1/RlaY4uEYSoC4JItlOzl1YqePjb950TiXoyU4aage1tauNaK52Egm2JdI+E="
+    - secure: "kWoHcEXmYb0Z0AcKXOXODHunxs4jqUy/HrV9fnQAc7Bi7B8gui3KWo/EQJJapUSZhkCypXLO7wKPbD+/NUoF4ZrjACFDBNYrxUPtn2QZ0yk7yIqdk4Ui7bQYlAj5Fs4E8HFlRNC+85gSr89of94Xqd2aOV865RwSIx0p2JAPSG0="
+    - secure: "UIqjelMuHl3WRBpsY1/bYIWyvQO3BJXPikrcDSWd2KIDSLxVaf+O5Vvyaf3YRHM00XJ1f3ILK/zh6knA7J0ZQqmE7nbGsBziaOOhBoGtSYldqVqiRrmppCWCtSaf7a+EFd5TXh0jpZnJhdVmyEBJ3AMTzlMzagIh9IYS95REF4c="
+    - secure: "FJE+qUJdP0SUrA5UFCXxZui7Ijj7RWl2KCb1ZuGLbrCPv900b3bggjxqmI2t4ut1xsun4XO27gj8/xnIZzI7IyNHnB23EwZPtTkepeQONtRtEwBMXKzW2bMHeMoBwg4HQ6n+qpk3/+kg5LvRrajHY2srTmXpGQNq86yc+Ei6C0c="
+    - secure: "Ry7T7mVqCujQZ14vRYHpM6+vAm0pjqSZw3uA+9yDNlT1uAOMbULxDxShaAnwbkk+Qt1XNmAq3ZAjdSKZSPzNQ88wibZovnV8GZYlyYKScKU+KmDqklL8jNMrZvrl/xrjw+R9JC6JjJkyp5C7Dp9OwC6Cz6Wtfg7IR+8ZPDq0A0I="
+    - PULLTO_SETTINGS_MODULE=settings_sample
 
 # command to run tests
-script: nosetests
+script:
+  - echo -n $id_rsa_{00..30}} >> /.ssh/id_rsa_base64
+  - base64 --decode --ignore-garbage ~/.ssh/id_rsa_base64 > ~/.ssh/id_rsa
+  - chmod 600 ~/.ssh/id_rsa
+  - nosetests
 
 # commands to run after success
 after_success:
