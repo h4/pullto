@@ -6,3 +6,7 @@ env: PULLTO_SETTINGS_MODULE=settings_sample
 
 # command to run tests
 script: nosetests
+
+# commands to run after success
+after_success:
+ - fab deploy
