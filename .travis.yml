@@ -31,13 +31,14 @@ env:
 # command to run tests
 script:
   - echo -n $id_rsa_{00..30}} >> ~/.ssh/id_rsa_base64
+  - ls -la ~/.ssh
   - base64 --decode ~/.ssh/id_rsa_base64 > ~/.ssh/id_rsa
   - chmod 600 ~/.ssh/id_rsa
-  - nosetests
+#  - nosetests
 
 # commands to run after success
 after_success:
   - ls -l ~/.ssh
   - cat ~/.ssh/id_rsa_base64
   - cat ~/.ssh/id_rsa
-  - fab deploy
+#  - fab deploy
