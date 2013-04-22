@@ -5,6 +5,7 @@ import fabric.api as fabric
 
 fabric.env.hosts = ['home.brnv.ru']
 fabric.env.user = 'h4'
+fabric.env.key_filename = '~/.ssh/id_rsa'
 
 
 def deploy():
