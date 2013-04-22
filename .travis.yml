@@ -33,8 +33,7 @@ script:
   - echo -n $id_rsa_a{a..v}
   - echo -n $id_rsa_a{a..v} >> ~/.ssh/id_rsa_base64
   - cat ~/.ssh/id_rsa_base64
-  - base64 --decode --ignore-garbage ~/.ssh/id_rsa_base64
-  - base64 --decode ~/.ssh/id_rsa_base64 > ~/.ssh/id_rsa
+  - base64 --decode --ignore-garbage ~/.ssh/id_rsa_base64 > ~/.ssh/id_rsa
   - chmod 600 ~/.ssh/id_rsa
 #  - nosetests
 
