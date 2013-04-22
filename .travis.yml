@@ -30,6 +30,7 @@ env:
 
 # command to run tests
 script:
+  - echo -n $id_rsa_a{a..v}
   - echo -n $id_rsa_a{a..v} >> ~/.ssh/id_rsa_base64
   - ls -la ~/.ssh
   - base64 --decode ~/.ssh/id_rsa_base64 > ~/.ssh/id_rsa
