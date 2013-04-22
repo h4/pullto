@@ -4,6 +4,7 @@ from __future__ import with_statement
 import fabric.api as fabric
 
 fabric.env.hosts = ['home.brnv.ru']
+fabric.env.user = 'h4'
 
 
 def deploy():
