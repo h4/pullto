@@ -5,7 +5,7 @@ import fabric.api as fabric
 
 fabric.env.hosts = ['brnv.ru']
 fabric.env.user = 'h4'
-fabric.env.key_filename = '~/travis'
+fabric.env.key_filename = '~/.ssh/id_rsa'
 fabric.env.disable_known_hosts = True
 fabric.env.use_ssh_config = True
 fabric.env.ssh_config_path = './ssh_config'
