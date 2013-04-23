@@ -10,6 +10,7 @@ fabric.env.disable_known_hosts = True
 fabric.env.use_ssh_config = True
 fabric.env.ssh_config_path = './ssh_config'
 fabric.env.no_keys = True
+fabric.env.abort_on_prompts = True
 
 
 def deploy():
